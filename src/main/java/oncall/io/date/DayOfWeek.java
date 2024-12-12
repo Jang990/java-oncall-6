@@ -27,6 +27,14 @@ public enum DayOfWeek {
         throw new IllegalArgumentException(ERROR_MESSAGE);
     }
 
+    public static DayOfWeek getDayOfWeek(int day) {
+        for (DayOfWeek value : DayOfWeek.values()) {
+            if(value.getId() == day% 7)
+                return value;
+        }
+        return null;
+    }
+
     public String getName() {
         return name;
     }
