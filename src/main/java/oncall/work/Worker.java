@@ -15,7 +15,7 @@ public class Worker {
 
     @Override
     public String toString() {
-        if(date.isHoliday())
+        if(!date.isHoliday() && date.isLegalHoliday())
             return formatted(HOLIDAY_FORMAT);
         return formatted(WEEKDAY_FORMAT);
     }

@@ -6,13 +6,13 @@ public class Date {
     private final int month;
     private final int day;
     private final DayOfWeek dayOfWeek;
-    private final boolean isHoliday;
+    private final boolean isLegalHoliday;
 
-    public Date(int month, int day, DayOfWeek dayOfWeek, boolean isHoliday) {
+    public Date(int month, int day, DayOfWeek dayOfWeek, boolean isLegalHoliday) {
         this.month = month;
         this.day = day;
         this.dayOfWeek = dayOfWeek;
-        this.isHoliday = isHoliday;
+        this.isLegalHoliday = isLegalHoliday;
     }
 
     public int getMonth() {
@@ -28,6 +28,10 @@ public class Date {
     }
 
     public boolean isHoliday() {
-        return isHoliday;
+        return dayOfWeek.isHoliday();
+    }
+
+    public boolean isLegalHoliday() {
+        return isLegalHoliday;
     }
 }

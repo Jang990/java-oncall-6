@@ -18,6 +18,7 @@ class CalendarTest {
         assertEquals(result.getDay(), 6);
         assertEquals(result.getDayOfWeek(), DayOfWeek.토);
         assertTrue(result.isHoliday());
+        assertFalse(result.isLegalHoliday());
     }
 
     @Test
@@ -26,11 +27,11 @@ class CalendarTest {
 
         Date result1 = calendar.getDate(3);
         assertEquals(result1.getDayOfWeek(), DayOfWeek.수);
-        assertTrue(result1.isHoliday());
+        assertTrue(result1.isLegalHoliday());
 
         Date result2 = calendar.getDate(9);
         assertEquals(result2.getDayOfWeek(), DayOfWeek.화);
-        assertTrue(result2.isHoliday());
+        assertTrue(result2.isLegalHoliday());
     }
 
     @Test
