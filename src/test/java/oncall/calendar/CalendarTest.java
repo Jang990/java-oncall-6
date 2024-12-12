@@ -32,4 +32,13 @@ class CalendarTest {
         assertEquals(result2.getDayOfWeek(), DayOfWeek.화);
         assertTrue(result2.isHoliday());
     }
+
+    @Test
+    void day를_넘겨줄_때_캘린더의_날짜밖이라면_예외발생() {
+        Calendar calendar = new Calendar(new DateSetting(10, DayOfWeek.월));
+        assertThrows(IllegalArgumentException.class, () -> calendar.getDate(0));
+        assertThrows(IllegalArgumentException.class, () -> calendar.isHoliday(0));
+        assertThrows(IllegalArgumentException.class, () -> calendar.getDate(32));
+        assertThrows(IllegalArgumentException.class, () -> calendar.isHoliday(32));
+    }
 }

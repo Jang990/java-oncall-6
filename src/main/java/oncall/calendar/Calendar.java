@@ -26,10 +26,21 @@ public class Calendar {
     }
 
     public boolean isHoliday(int day) {
+        validDay(day);
         return isHoliday[day];
     }
 
     public Date getDate(int day) {
+        validDay(day);
         return new Date(month, day, dayOfWeeks[day], isHoliday[day]);
+    }
+
+    private void validDay(int day) {
+        if(day <= 0 || getEndOfMonth() < day)
+            throw new IllegalArgumentException();
+    }
+
+    public int getEndOfMonth() {
+        return days[month];
     }
 }
