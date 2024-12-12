@@ -5,7 +5,7 @@ import java.util.List;
 public class WorkerListFormatter {
     public String formatted(List<Worker> workers) {
         StringBuilder sb = new StringBuilder();
-        workers.forEach(worker -> sb.append(worker).append("\n"));
+        workers.forEach(worker -> sb.append(worker).append(System.lineSeparator()));
         return sb.toString();
     }
 }
